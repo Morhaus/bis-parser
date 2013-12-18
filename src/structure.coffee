@@ -35,10 +35,11 @@ module.exports = class Structure extends Consumable
       @move 4
       []
     else
-      buffer = new Buffer (size[0] * size[1] * typeSize)
+      initialGridSize = roundUpToNextPowerOf4 (Math.max size[0], size[1])
+      buffer = new Buffer (initialGridSize * initialGridSize * typeSize)
+      initialGridSize *= (typeSize / SIZEOF.UINT16)
       buffer.fill 0
 
-      initialGridSize = roundUpToNextPowerOf4 (Math.max size[0], size[1]) * (typeSize / SIZEOF.UINT16)
       do readGrid = (gridSize = initialGridSize, gridOffset = [0, 0]) =>
         flag = @uint16()
         # We divide the grid in 16 blocks of equal size.

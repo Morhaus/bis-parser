@@ -46,35 +46,41 @@ module.exports = class WRP extends Structure
       when 3, 4, 8, 9, 18, 19, 20, 21, 28, 29 then @MapType4()
       when 34 then @MapType5()
       when 35 then @MapType35()
+      else throw new Error 'unknown MapType'
 
   MapType1: =>
     id: @uint32()
     x: @float()
     z: @float()
+    type: 1
 
   MapType2: =>
     id: @uint32()
     bounds: ([@float(), @float()] for i in [0...4])
+    type: 2
 
   MapType3: =>
     color: @RGBAColor()
     indicator: @uint32()
     unknowns: [@float(), @float(), @float(), @float()]
+    type: 3
 
   MapType4: =>
     id: @uint32()
     bounds: ([@float(), @float()] for i in [0...4])
     color: @RGBAColor()
+    type: 4
 
   MapType5: =>
     id: @uint32()
     line: ([@float(), @float()] for i in [0...2])
-    color: @RGBAColor()
+    type: 5
 
   MapType35: =>
     id: @uint32()
     line: ([@float(), @float()] for i in [0...3])
     unknown: @byte()
+    type: 35
 
   parse: =>
     output = o = {}
