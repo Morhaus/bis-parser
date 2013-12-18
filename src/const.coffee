@@ -1,0 +1,11 @@
+exports.SIZEOF =
+  BYTE: 1
+  INT8: 1
+  UINT8: 1
+  INT16: 2
+  UINT16: 2
+  INT32: 4
+  UINT32: 4
+  FLOAT: 4
+  DOUBLE: 8
+  OBJECT: 60
