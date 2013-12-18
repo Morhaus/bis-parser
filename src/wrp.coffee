@@ -124,5 +124,5 @@ module.exports = class WRP extends Structure
     o.objects = (@Object() for i in [0...sizeOfObjects/SIZEOF.OBJECT])
 
     o.mapInfos = (@MapInfo() while @offset isnt @buffer.length)
-    console.log o.mapInfos.length
+
     return o
