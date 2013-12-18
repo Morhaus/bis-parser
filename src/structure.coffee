@@ -27,7 +27,11 @@ module.exports = class Structure extends Consumable
 
   XYZTriplet: => [@float(), @float(), @float()]
 
-  TransformMatrix: => ((@float() for i in [0...4]) for j in [0...3])
+  TransformMatrix: => [
+    [@float(), @float(), @float(), @float()]
+    [@float(), @float(), @float(), @float()]
+    [@float(), @float(), @float(), @float()]
+  ]
 
   GridBlock: (size, typeSize) =>
     present = @byte()

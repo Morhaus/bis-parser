@@ -56,7 +56,11 @@ module.exports = class WRP extends Structure
 
   MapType2: =>
     id: @uint32()
-    bounds: ([@float(), @float()] for i in [0...4])
+    line: [
+      [@float(), @float()]
+      [@float(), @float()]
+      [@float(), @float()]
+      [@float(), @float()]]
     type: 2
 
   MapType3: =>
@@ -67,18 +71,30 @@ module.exports = class WRP extends Structure
 
   MapType4: =>
     id: @uint32()
-    bounds: ([@float(), @float()] for i in [0...4])
+    line: [
+      [@float(), @float()]
+      [@float(), @float()]
+      [@float(), @float()]
+      [@float(), @float()]
+    ]
     color: @RGBAColor()
     type: 4
 
   MapType5: =>
     id: @uint32()
-    line: ([@float(), @float()] for i in [0...2])
+    line: [
+      [@float(), @float()]
+      [@float(), @float()]
+    ]
     type: 5
 
   MapType35: =>
     id: @uint32()
-    line: ([@float(), @float()] for i in [0...3])
+    line: [
+      [@float(), @float()]
+      [@float(), @float()]
+      [@float(), @float()]
+    ]
     unknown: @byte()
     type: 35
 
