@@ -1,3 +1,3 @@
 module.exports =
-  WRP: require 'wrp'
-  PBO: require 'pbo'
+  WRP: require './wrp'
+  PBO: require './pbo'
